@@ -2,29 +2,14 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { Github, Linkedin, Twitter, Globe, ArrowRight } from 'lucide-react';
 
-const team = [
-  {
-    name: "BOSE",
-    role: "HEAD OF DEVELOPMENT",
-    skills: ["React Engineer", "System Design", "Cloud Infrastructure"],
-    bio: "Driving the technical vision and engineering standards. Passionate about performant, scalable web architectures.",
-    image: "https://api.dicebear.com/7.x/notionists/svg?seed=Bose&backgroundColor=d49b00", 
-  },
-  {
-    name: "SUDHARSAN",
-    role: "SOFTWARE ARCHITECT",
-    skills: ["Backend Logic", "Database Optimization", "Security"],
-    bio: "Master of internal logic and data structures. Ensuring every system we build is secure and lightning-fast.",
-    image: "https://api.dicebear.com/7.x/notionists/svg?seed=Sudharsan&backgroundColor=0a0a0a",
-  }
-];
+import { team } from '../data';
 
 const Team = () => {
   return (
     <section id="team" className="py-32 bg-white text-dark overflow-hidden relative">
       {/* Background decoration */}
       <div className="absolute top-0 right-0 w-1/3 h-full bg-dark/[0.01] -skew-x-12 translate-x-20" />
-      
+
       <div className="section-container relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-start mb-24 gap-12">
           <div className="max-w-2xl">
@@ -36,7 +21,7 @@ const Team = () => {
               <div className="w-12 h-px bg-primary" />
               <span className="text-xs font-bold uppercase tracking-[0.4em] text-primary">Our Core</span>
             </motion.div>
-            <h2 className="text-6xl md:text-8xl font-display font-bold leading-[0.9]">
+            <h2 className="text-5xl md:text-7xl font-display font-bold leading-[0.9]">
               THE MEN IN <br />
               <span className="text-primary italic">THE MACHINE</span>
             </h2>
@@ -60,18 +45,18 @@ const Team = () => {
                     className="w-full h-full object-contain"
                   />
                 </div>
-                
+
                 <div className="flex flex-col justify-center">
                   <span className="text-xs font-bold tracking-[0.3em] text-primary mb-3">
                     {member.role}
                   </span>
-                  <h3 className="text-4xl md:text-5xl font-display font-bold mb-6 tracking-tight">
+                  <h3 className="text-3xl md:text-4xl font-display font-bold mb-6 tracking-tight">
                     {member.name}
                   </h3>
                   <p className="text-gray-500 leading-relaxed mb-8 font-medium">
                     {member.bio}
                   </p>
-                  
+
                   <div className="flex flex-wrap gap-2 mb-10">
                     {member.skills.map(skill => (
                       <span key={skill} className="text-[9px] font-bold tracking-widest uppercase px-3 py-1 bg-dark/5 rounded-full text-gray-400">

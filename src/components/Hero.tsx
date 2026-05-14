@@ -2,7 +2,10 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { ArrowRight, Code2, Terminal, Rocket, Github, Instagram } from 'lucide-react';
 
+import { siteConfig } from '../data';
+
 const Hero = () => {
+  const { hero } = siteConfig;
   return (
     <section className="relative min-h-screen flex items-center pt-32 pb-20 overflow-hidden bg-light">
       {/* Dynamic Background */}
@@ -25,11 +28,11 @@ const Hero = () => {
               <div className="inline-flex items-center space-x-2 px-4 py-1.5 bg-dark text-white rounded-full mb-8">
                 <div className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse" />
                 <span className="text-[10px] font-bold uppercase tracking-[0.2em]">
-                  Now Available for 2024 Projects
+                  {hero.badge}
                 </span>
               </div>
               
-              <h1 className="text-7xl md:text-[120px] font-display font-bold leading-[0.85] tracking-[-0.04em] mb-10">
+              <h1 className="text-5xl md:text-8xl lg:text-9xl font-display font-bold leading-[0.85] tracking-[-0.04em] mb-10 break-words">
                 CRAFTING <br />
                 <span className="text-primary italic">DIGITAL</span> FAST <br />
                 EXPERIENCES
@@ -37,17 +40,17 @@ const Hero = () => {
               
                 <div className="flex flex-col md:flex-row md:items-center gap-12 mb-12">
                 <p className="text-lg text-gray-500 max-w-sm leading-relaxed font-medium">
-                  At <span className="text-dark font-bold">Webzo</span>, we specialize in high-performance web systems and bespoke software architectures. Led by Bose & Sudharsan.
+                  {hero.description}
                 </p>
                 <div className="flex flex-col space-y-4">
                   <div className="flex items-center space-x-3">
                     <div className="w-5 h-5 rounded-full bg-green-500/20 flex items-center justify-center">
                       <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
                     </div>
-                    <span className="text-[10px] font-black uppercase tracking-widest text-dark">Available for Q2 2024</span>
+                    <span className="text-[10px] font-black uppercase tracking-widest text-dark">{hero.availability}</span>
                   </div>
                   <div className="text-[10px] font-mono text-gray-400">
-                    STARTING AT ₹5,999/-
+                    STARTING AT {hero.startingPrice}
                   </div>
                 </div>
               </div>

@@ -1,6 +1,8 @@
 import React from 'react';
 import { Cpu, Github, Twitter, Linkedin, Mail, ArrowUpRight } from 'lucide-react';
 
+import { siteConfig } from '../data';
+
 const Footer = () => {
   return (
     <footer className="bg-white text-dark pt-32 pb-12 overflow-hidden border-t border-dark/5 relative">
@@ -12,22 +14,22 @@ const Footer = () => {
                 <Cpu className="text-white w-7 h-7" />
               </div>
               <span className="text-3xl font-display font-bold tracking-tighter">
-                wwbderoa
+                {siteConfig.name}
               </span>
             </div>
             <p className="text-xl text-gray-500 max-w-sm mb-12 leading-relaxed font-medium">
-              We architect the next generation of digital products. High-performance engineering for ambitious brands.
+              {siteConfig.tagline}
             </p>
             <div className="flex space-x-8">
-              <a href="#" className="group flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-dark transition-colors">
+              <a href={siteConfig.socials.github} className="group flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-dark transition-colors">
                 <span>GITHUB</span>
                 <ArrowUpRight size={12} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </a>
-              <a href="#" className="group flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-dark transition-colors">
+              <a href={siteConfig.socials.linkedin} className="group flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-dark transition-colors">
                 <span>LINKEDIN</span>
                 <ArrowUpRight size={12} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </a>
-              <a href="#" className="group flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-dark transition-colors">
+              <a href={siteConfig.socials.twitter} className="group flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-dark transition-colors">
                 <span>TWITTER</span>
                 <ArrowUpRight size={12} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </a>
@@ -49,15 +51,15 @@ const Footer = () => {
             <ul className="space-y-6">
               <li>
                 <p className="text-[10px] font-bold text-gray-400 uppercase mb-1">Inquiries</p>
-                <a href="mailto:hello@wwbderoa.com" className="text-lg font-bold hover:text-primary transition-colors flex items-center space-x-2">
-                  <span>hello@wwbderoa.com</span>
+                <a href={`mailto:${siteConfig.email}`} className="text-lg font-bold hover:text-primary transition-colors flex items-center space-x-2">
+                  <span>{siteConfig.email}</span>
                 </a>
               </li>
               <li>
                 <p className="text-[10px] font-bold text-gray-400 uppercase mb-1">Location</p>
                 <p className="text-sm font-medium text-gray-500">
-                  India Base // Global Ops<br />
-                  UTC+5:30
+                  {siteConfig.location}<br />
+                  {siteConfig.timezone}
                 </p>
               </li>
             </ul>
@@ -67,7 +69,7 @@ const Footer = () => {
         <div className="pt-12 border-t border-dark/5 flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="flex items-center space-x-8">
             <p className="text-[10px] text-gray-400 font-bold uppercase tracking-[0.2em]">
-              © 2024 WWBDEROA STUDIO
+              © 2024 {siteConfig.fullName}
             </p>
             <div className="hidden md:flex items-center space-x-2">
               <div className="w-1 h-1 bg-primary rounded-full animate-ping" />
@@ -76,16 +78,16 @@ const Footer = () => {
           </div>
           
           <div className="flex items-center space-x-4">
-            <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest">Built by Bose & Sudharsan</span>
+            <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest">Built by {siteConfig.team.developers.join(' & ')}</span>
             <div className="w-px h-4 bg-dark/10" />
-            <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest italic">V1.0.42</span>
+            <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest italic">{siteConfig.version}</span>
           </div>
         </div>
       </div>
       
       {/* Massive background text */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[30vw] font-display font-black text-dark/[0.01] whitespace-nowrap pointer-events-none select-none tracking-tighter uppercase italic">
-        wwbderoa
+        {siteConfig.name}
       </div>
     </footer>
   );

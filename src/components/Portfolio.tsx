@@ -2,24 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { ExternalLink, ArrowUpRight } from 'lucide-react';
 
-const projects = [
-  {
-    title: "VIRTUAL COMMERCE",
-    category: "Full-Stack Web App",
-    description: "A high-performance e-commerce platform with real-time analytics and dynamic inventory. Optimized for conversion and speed.",
-    image: "https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&q=80&w=1200",
-    tags: ["React", "Go", "PostgreSQL"],
-    client: "Global Retail"
-  },
-  {
-    title: "NEURAL ENGINE",
-    category: "Enterprise Software",
-    description: "Custom internal workflow management tool with AI-powered task prioritization. Scaling team productivity by 40%.",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200",
-    tags: ["TypeScript", "Docker", "AWS"],
-    client: "Tech Solutions"
-  }
-];
+import { projects } from '../data';
 
 const Portfolio = () => {
   return (
@@ -35,7 +18,7 @@ const Portfolio = () => {
               <div className="w-12 h-px bg-dark" />
               <span className="text-xs font-bold uppercase tracking-[0.4em] text-gray-400">Our Work</span>
             </motion.div>
-            <h2 className="text-6xl md:text-8xl font-display font-bold tracking-tighter leading-[0.9]">
+            <h2 className="text-5xl md:text-7xl font-display font-bold tracking-tighter leading-[0.9]">
               SELECTED <br />
               <span className="text-gray-400 italic">PROJECTS</span>
             </h2>
@@ -72,7 +55,7 @@ const Portfolio = () => {
                   </div>
                 </div>
               </div>
-              
+
               {/* Content Side */}
               <div className="w-full lg:w-2/5 p-4">
                 <div className="flex items-center space-x-3 mb-6">
@@ -80,15 +63,15 @@ const Portfolio = () => {
                   <div className="w-4 h-[1px] bg-dark/20" />
                   <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-gray-400">{project.category}</span>
                 </div>
-                
-                <h3 className="text-4xl md:text-6xl font-display font-bold tracking-tighter mb-6 group-hover:text-primary transition-colors">
+
+                <h3 className="text-3xl md:text-5xl font-display font-bold tracking-tighter mb-6 group-hover:text-primary transition-colors">
                   {project.title}
                 </h3>
-                
+
                 <p className="text-lg text-gray-500 leading-relaxed mb-8">
                   {project.description}
                 </p>
-                
+
                 <div className="flex flex-wrap gap-3 mb-10">
                   {project.tags.map(tag => (
                     <span key={tag} className="text-[10px] font-bold tracking-widest uppercase px-4 py-1.5 bg-dark text-white rounded-full">
@@ -96,9 +79,9 @@ const Portfolio = () => {
                     </span>
                   ))}
                 </div>
-                
-                <a 
-                  href="#" 
+
+                <a
+                  href="#"
                   className="inline-flex items-center space-x-3 text-xs font-bold uppercase tracking-[0.2em] border-b-2 border-dark pb-2 hover:border-primary transition-colors"
                 >
                   <span>Explore Project</span>

@@ -2,84 +2,17 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { Check, Info, Rocket, Zap, Crown, Settings } from 'lucide-react';
 
-const plans = [
-  {
-    name: "Startup Plan",
-    price: "₹5,999/-",
-    originalPrice: "₹8,000",
-    description: "Best for Startup's",
-    features: [
-      "4 Page Modern Website",
-      "Dynamic Website",
-      "Domain Configuration",
-      "Hosting Configuration",
-      "2 Business Emails",
-      "100% Mobile Friendly",
-      "Website Admin Panel",
-      "SEC Ready Website",
-      "Free SSL Certificate"
-    ],
-    icon: <Rocket className="w-8 h-8" />,
-    color: "bg-gray-50"
-  },
-  {
-    name: "Classic Plan",
-    price: "₹9,999/-",
-    originalPrice: "₹13,000",
-    description: "Best for Small/Medium Business",
-    popular: true,
-    features: [
-      "8 Page Modern Website",
-      "Dynamic Website",
-      "Domain Configuration",
-      "Hosting Configuration",
-      "3 Business Emails",
-      "100% Mobile Friendly",
-      "Website Admin Panel",
-      "Google Search Console",
-      "Payment Integration"
-    ],
-    icon: <Zap className="w-8 h-8 text-primary" />,
-    color: "bg-white"
-  },
-  {
-    name: "Premium Plan",
-    price: "₹11,999/-",
-    originalPrice: "₹15,000",
-    description: "Best for Enterprises",
-    features: [
-      "12 Page Modern Website",
-      "Dynamic Website",
-      "Domain Configuration",
-      "Hosting Configuration",
-      "5 Business Emails",
-      "100% Mobile Friendly",
-      "Website Admin Panel",
-      "Woocommerce Functions",
-      "Premium Design"
-    ],
-    icon: <Crown className="w-8 h-8 text-primary" />,
-    color: "bg-gray-50"
-  },
-  {
-    name: "Custom Plan",
-    price: "???",
-    description: "Best for Custom Website",
-    features: [
-      "Pages: As Per Requirement",
-      "Unlimited Categories",
-      "Custom UI/UX Design",
-      "Advanced Functionality",
-      "Dedicated Support",
-      "Scalable Architecture",
-      "Full API Access",
-      "Custom Integrations",
-      "Priority Maintenance"
-    ],
-    icon: <Settings className="w-8 h-8 text-primary" />,
-    color: "bg-white"
+import { plans } from '../data';
+
+const IconComponent = ({ name, className }: { name: string; className?: string }) => {
+  switch (name) {
+    case 'Rocket': return <Rocket className={className} />;
+    case 'Zap': return <Zap className={className} />;
+    case 'Crown': return <Crown className={className} />;
+    case 'Settings': return <Settings className={className} />;
+    default: return <Info className={className} />;
   }
-];
+};
 
 const Pricing = () => {
   return (
@@ -119,7 +52,7 @@ const Pricing = () => {
               
               <div className="mb-8 text-center">
                 <div className="flex justify-center mb-6">
-                  {plan.icon}
+                  <IconComponent name={plan.icon} className={`w-8 h-8 ${plan.popular ? 'text-primary' : ''}`} />
                 </div>
                 <h3 className="text-2xl font-display font-bold mb-1 tracking-tight">{plan.name}</h3>
                 <p className="text-xs text-gray-400 uppercase font-black tracking-widest mb-4">{plan.description}</p>

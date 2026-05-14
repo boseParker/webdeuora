@@ -2,36 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { Globe, Cpu, Smartphone, Shield, Layers, Zap, Database, Search } from 'lucide-react';
 
-const services = [
-  {
-    title: "Web Platforms",
-    description: "High-performance web applications built for scale. We leverage Next.js and Tailwind to deliver pixel-perfect results.",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200",
-    category: "FRONTEND",
-    tags: ["React", "TypeScript", "GSAP"]
-  },
-  {
-    title: "Software Engineering",
-    description: "Robust backend architectures and microservices. We build the engine that powers your business logic.",
-    image: "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=1200",
-    category: "BACKEND",
-    tags: ["Go", "Node.js", "AWS"]
-  },
-  {
-    title: "SaaS Development",
-    description: "Complete multi-tenant SaaS ecosystems with subscription management, auth, and analytics integration.",
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1200",
-    category: "PRODUCT",
-    tags: ["Stripe", "Auth0", "Redis"]
-  },
-  {
-    title: "SEO & Growth",
-    description: "Data-driven optimization to ensure your brand reaches the right audience with maximum visibility.",
-    image: "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=1200",
-    category: "MARKETING",
-    tags: ["Core Web Vitals", "Analytics"]
-  }
-];
+import { services } from '../data';
 
 const Services = () => {
   return (
@@ -47,7 +18,7 @@ const Services = () => {
               <div className="w-12 h-px bg-primary" />
               <span className="text-xs font-bold uppercase tracking-[0.4em] text-primary">Capabilities</span>
             </motion.div>
-            <h2 className="text-6xl md:text-8xl font-display font-bold leading-[0.9] mb-8">
+            <h2 className="text-5xl md:text-7xl font-display font-bold leading-[0.9] mb-8">
               ENGINEERED FOR <br />
               <span className="text-gray-400 italic">EXCELLENCE</span>
             </h2>
@@ -83,7 +54,7 @@ const Services = () => {
               </div>
 
               <div className="p-12 flex-grow flex flex-col">
-                <h3 className="text-4xl font-display font-bold mb-6 tracking-tight group-hover:text-primary transition-colors">{service.title}</h3>
+                <h3 className="text-3xl font-display font-bold mb-6 tracking-tight group-hover:text-primary transition-colors">{service.title}</h3>
                 <p className="text-gray-500 text-lg leading-relaxed mb-12 font-medium group-hover:text-dark transition-colors">
                   {service.description}
                 </p>

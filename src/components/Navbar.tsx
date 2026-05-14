@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, Cpu } from 'lucide-react';
 
+import { siteConfig } from '../data';
+
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -39,7 +41,7 @@ const Navbar = () => {
               <Cpu className="text-white w-6 h-6 group-hover:rotate-12 transition-transform" />
             </div>
             <span className="text-2xl font-display font-bold tracking-tight">
-              wwbderoa
+              {siteConfig.name}
             </span>
           </a>
 

@@ -5,6 +5,8 @@ import * as z from 'zod';
 import { motion, AnimatePresence } from 'motion/react';
 import { Send, CheckCircle2, Mail, MapPin, ArrowRight } from 'lucide-react';
 
+import { siteConfig } from '../data';
+
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
   email: z.string().email({ message: "Please enter a valid email address." }),
@@ -74,7 +76,7 @@ const ContactForm = () => {
                   </div>
                   <div>
                     <p className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-1">Direct Communication</p>
-                    <p className="text-xl font-bold">hello@wwbderoa.com</p>
+                    <p className="text-xl font-bold">{siteConfig.email}</p>
                     <p className="text-sm text-gray-400 mt-1">Response within 24 hours</p>
                   </div>
                 </div>
@@ -85,7 +87,7 @@ const ContactForm = () => {
                   </div>
                   <div>
                     <p className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-1">Our Base</p>
-                    <p className="text-xl font-bold">Coimbatore, India</p>
+                    <p className="text-xl font-bold">{siteConfig.location.split(' // ')[0]}</p>
                     <p className="text-sm text-gray-400 mt-1">Available for global logistics</p>
                   </div>
                 </div>
